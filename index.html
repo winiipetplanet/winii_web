@@ -12,8 +12,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winii's Pet Planet | 寵物溝通</title>
+    
+    <!-- === SEO 與 社群分享預覽設定 (Open Graph) === -->
+    <meta name="description" content="寵物溝通 ‧ 動物療癒 ‧ 臼井靈氣。我是溫妮，陪著您一起感受孩子的溫度、悸動與愛，一同探索他們內心的小小宇宙。">
+    <meta property="og:title" content="Winii's Pet Planet | 寵物溝通" />
+    <meta property="og:description" content="寵物溝通 ‧ 動物療癒 ‧ 臼井靈氣。陪著您一起感受孩子的溫度、悸動與愛，一同探索他們內心的小小宇宙。" />
+    <!-- 請注意：og:image 建議使用絕對路徑 (包含 https)，這裡預設抓取您網站下的 logo.jpg -->
+    <meta property="og:image" content="https://winii-petplanet.netlify.app/logo.jpg" />
+    <meta property="og:url" content="https://winii-petplanet.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Winii's Pet Planet" />
+
     <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- 引入 Font Awesome 圖示庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -82,7 +93,7 @@
 
         header img {
             width: 100%;
-            max-width: 180px; /* 修改這裡：從 250px 調整為 180px，讓 Logo 更精緻 */
+            max-width: 180px; 
             height: auto;
             display: block;
             margin: 0 auto 10px;
@@ -114,30 +125,33 @@
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             backdrop-filter: blur(5px);
+            width: 100%;
         }
 
         .tabs {
             display: flex;
-            justify-content: space-around;
+            /* 修改：改為 space-between 配合 flex:1 讓寬度平均撐開 */
+            justify-content: space-between; 
             padding: 0;
-            /* 修正：將選單最大寬度統一為 600px，確保與下方內容寬度一致 */
             max-width: 600px;
             margin: 0 auto;
             position: relative;
+            width: 100%;
         }
 
         .tab-btn {
             background: none;
             border: none;
-            padding: 15px 2px;
+            padding: 15px 0; /* 修改：左右 padding 設為 0，靠 flex 分配寬度 */
             font-size: 1rem;
             color: #999;
             font-weight: 500;
             cursor: pointer;
             position: relative;
             transition: all 0.3s;
-            font-family: 'Noto Sans TC', sans-serif;
-            flex: 1; 
+            /* 修改：加入 Fredoka 字體，讓英文 (Q&A) 變圓潤可愛 */
+            font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+            flex: 1; /* 重要：每個按鈕平分寬度 */
             width: 100%;
             text-align: center;
             margin: 0;
@@ -159,19 +173,17 @@
 
         @media (max-width: 768px) {
             .tab-btn {
-                font-size: 13px;
+                font-size: 14px; /* 手機版字稍微調大一點點好閱讀 */
                 padding: 12px 0;
             }
             .tab-btn i {
                 display: none;
             }
-            /* 修正：針對手機版增加上方內距至 60px，解決文字遮蔽問題 */
             .welcome-quote {
                 padding: 60px 20px 40px !important; 
             }
         }
         
-        /* 針對更小螢幕的特別優化 */
         @media (max-width: 480px) {
             .welcome-quote {
                 font-size: 0.95rem; 
@@ -180,7 +192,7 @@
 
         .tab-btn.active {
             color: var(--primary-orange);
-            font-weight: 700;
+            font-weight: 600; /* 修改：稍微加粗即可，Fredoka 本身就很明顯 */
         }
 
         .tab-btn.active span::after {
@@ -196,11 +208,13 @@
             pointer-events: none;
         }
 
+        /* 修改 dropdown 設定以配合平均寬度 */
         .dropdown {
             position: relative;
-            flex: 1;
+            flex: 1; /* 重要：下拉選單的容器也要平分寬度 */
             display: flex;
             justify-content: center;
+            min-width: 0; /* 防止內容過長撐爆 */
         }
 
         .dropdown-content {
@@ -210,7 +224,7 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: #fff;
-            min-width: 140px;
+            min-width: 120px; /* 稍微調小一點避免手機版太寬 */
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
             border-radius: 10px;
             z-index: 1001;
@@ -220,12 +234,13 @@
 
         .dropdown-content a {
             color: var(--text-dark);
-            padding: 12px 16px;
+            padding: 12px 10px;
             text-decoration: none;
             display: block;
             text-align: center;
             font-size: 0.95rem;
             border-bottom: 1px dashed #eee;
+            font-family: 'Noto Sans TC', sans-serif; /* 下拉內容維持中文黑體 */
         }
 
         .dropdown-content a:last-child {
@@ -249,7 +264,6 @@
 
         /* 內容區域 */
         .content-container {
-            /* 修正：將內容區域最大寬度統一修正為 600px，符合最佳閱讀體驗，並解決寬度不一問題 */
             max-width: 600px;
             margin: 0 auto;
             padding: 25px 20px;
@@ -273,7 +287,6 @@
         .card {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
-            /* 修正：將左右內距改為 30px，與 welcome-quote 一致，確保文字對齊統一 */
             padding: 25px 30px;
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(140, 207, 185, 0.15);
@@ -296,12 +309,11 @@
             line-height: 1;
         }
 
-        /* 讓文字絕對置中的特殊設定 (用於開始預約) */
         .section-title.center-balanced::after {
             content: '✎'; 
             font-size: 1.4em;
             margin-left: 10px;
-            visibility: hidden; /* 隱藏，僅用於佔位平衡左邊的圖示 */
+            visibility: hidden; 
         }
 
         .t-price::before, .t-nature::before { 
@@ -361,7 +373,6 @@
             font-weight: 500; 
             color: #777; 
             background-color: #fff; 
-            /* 維持：上方內距 50px 避免遮擋，左右 30px 與 card 一致 */
             padding: 50px 30px 30px;
             border-radius: 25px; 
             margin-bottom: 30px;
@@ -374,7 +385,6 @@
         .welcome-quote::before {
             content: '❝';
             position: absolute;
-            /* 修正：將 Top 改為 10px，位置更靠上，避免與文字重疊 */
             top: 10px;
             left: 20px;
             font-size: 3rem;
@@ -383,7 +393,6 @@
             font-family: sans-serif;
         }
 
-        /* 步驟圓點縮小 (10px) */
         .step-box {
             position: relative;
             padding-left: 40px;
@@ -601,8 +610,9 @@
 
     <header>
         <!-- 
-          如果本地有 logo.jpg，請確保檔案在相同資料夾。
-          這裡加入 onerror 以防預覽環境找不到圖片時顯示替代文字或圖片。
+          重要提醒：
+          1. 請確認 logo.jpg 已經與 index.html 放在同一個資料夾並上傳。
+          2. 上方 og:image 標籤內的網址必須是網路上看得到的完整網址。
         -->
         <img src="logo.jpg" alt="Winii's pet planet Logo" onerror="this.onerror=null; this.src='https://placehold.co/250x250/FFF0E0/F2A285?text=Winii%27s+Pet+Planet';">
         <h1>Winii's pet planet</h1>
