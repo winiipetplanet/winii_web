@@ -17,9 +17,11 @@
     <meta name="description" content="寵物溝通 ‧ 動物療癒 ‧ 臼井靈氣。我是溫妮，陪著您一起感受孩子的溫度、悸動與愛，一同探索他們內心的小小宇宙。">
     <meta property="og:title" content="Winii's Pet Planet | 寵物溝通" />
     <meta property="og:description" content="寵物溝通 ‧ 動物療癒 ‧ 臼井靈氣。陪著您一起感受孩子的溫度、悸動與愛，一同探索他們內心的小小宇宙。" />
-    <!-- 請注意：og:image 建議使用絕對路徑 (包含 https)，這裡預設抓取您網站下的 logo.jpg -->
-    <meta property="og:image" content="https://winii-petplanet.netlify.app/logo.jpg" />
-    <meta property="og:url" content="https://winii-petplanet.netlify.app/" />
+    
+    <!-- 已更新為您的 GitHub Pages 真實網址 -->
+    <meta property="og:image" content="https://winiipetplanet.github.io/winii_web/logo.jpg" />
+    <meta property="og:url" content="https://winiipetplanet.github.io/winii_web/" />
+    
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Winii's Pet Planet" />
 
@@ -494,7 +496,7 @@
         .hashtag {
             font-size: 0.8rem;
             color: #fff;
-            background-color: var(--primary-green);
+            background-color: #8CCFB9; /* 預設綠色 */
             padding: 2px 8px;
             border-radius: 10px;
             margin-right: 5px; 
@@ -502,6 +504,22 @@
             display: inline-block;
             vertical-align: middle;
         }
+
+        /* === 新增：不同顏色的標籤樣式 === */
+        /* 1. 綠色 (預設) */
+        .tag-green { background-color: var(--primary-green); }
+        
+        /* 2. 暖橘色 (適合強調、注意事項) */
+        .tag-orange { background-color: var(--primary-orange); }
+        
+        /* 3. 柔和藍 (適合心情、天氣) */
+        .tag-blue { background-color: #89C2D9; }
+        
+        /* 4. 溫暖粉 (適合溫馨、感謝) */
+        .tag-pink { background-color: #ECA3AC; }
+
+        /* 5. 薰衣草紫 (靈氣專用) */
+        .tag-purple { background-color: #CDB4DB; }
 
         .blog-date {
             font-size: 0.85rem;
@@ -1069,6 +1087,52 @@
                 </div>
             </div>
             -->
+            <!-- 最新文章: 什麼是靈氣？ -->
+            <div class="card">
+                <div class="section-title blog-title">
+                    什麼是靈氣？
+                </div>
+                <div style="margin-bottom: 8px;">
+                     <!-- 使用新顏色：tag-purple (薰衣草紫) -->
+                     <span class="hashtag tag-purple">#靈氣療癒</span>
+                </div>
+                <div class="blog-date">2025/12/9</div>
+                <div class="blog-content-container">
+                    <div class="blog-content" id="blog-post-3">
+                        <p>
+                            當第一次聽到「靈氣（Reiki）」這個詞時，<br>
+                            我跟許多人一樣，認為是像是神祕能量？神通？<br>
+                            但其實靈氣並不是那樣的😀<br><br>
+
+                            靈氣源自日本，是一種透過溫柔的手觸或非接觸式的能量平衡技術，協助身心進入放鬆狀態。<br>
+                            許多人把它形容為「深層休息」或「像身體按下 reset 鍵的感覺」。<br><br>
+
+                            在靈氣的觀念中，每個生命體都有自己的能量流動，而壓力、緊張、情緒波動，都可能讓這個流動變得不順。<br>
+                            靈氣不能治療疾病，而是協助身心恢復到能自我調整的狀態🌿<br>
+                            完全沒有宗教成分，如動物溝通一樣，每個人都具有這份能力，不需要特別天賦。<br><br>
+
+                            在<strong>美國醫學研究網站PubMed</strong>可以找到多篇關於靈氣的研究，主題包含：<br>
+                            🔸靈氣對焦慮與壓力的影響<br>
+                            🔸疼痛管理中的輔助效果<br>
+                            🔸癌症患者的身心理舒緩<br>
+                            🔸心率、血壓等生理反應的改變<br>
+                            🔸動物（如馬匹、小鼠）在靈氣作用下的行為差異<br><br>
+
+                            研究結果雖然因研究方法不同而有所差異，但整體趨勢都指出：<br>
+                            <strong>靈氣有助於降低壓力、提升放鬆程度，對身心狀態有正向協助</strong><br><br>
+
+                            靈氣不能取代醫療，但能成為一個安全溫和的輔助方式。<br>
+                            溫妮每天一定會進行自我療癒，讓隔天要上班煩躁的心情降低很多🤣<br>
+                            而許多家長讓毛孩體驗後，都很有感的回饋溫妮💛<br><br>
+
+                            現在只要有預約溝通就可以免費體驗一次，<br>
+                            沒有預約溝通但想體驗的，優惠價是$100元喔!<br>
+                            非常歡迎家長自身或是讓毛孩來體驗這溫和放鬆的療癒方式❣️
+                        </p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleBlog('blog-post-3', this)">查看全文</button>
+                </div>
+            </div>
 
             <!-- 新文章 -->
             <div class="card">
@@ -1076,7 +1140,8 @@
                     我的毛孩這幾天突然不吃東西，看起來無精打采的怎麼辦?
                 </div>
                 <div style="margin-bottom: 8px;">
-                     <span class="hashtag">#寵物溝通</span>
+                     <!-- 使用新顏色：tag-orange (暖橘色) -->
+                     <span class="hashtag tag-orange">#寵物溝通</span>
                 </div>
                 <div class="blog-date">2025/12/5</div>
                 <div class="blog-content-container">
@@ -1111,7 +1176,8 @@
                     歡迎來到寵物心球
                 </div>
                 <div style="margin-bottom: 10px;">
-                    <span class="hashtag">#溫妮說說</span>
+                    <!-- 使用新顏色：tag-pink (溫暖粉) -->
+                    <span class="hashtag tag-pink">#溫妮說說</span>
                 </div>
                 <div class="blog-content-container">
                     <div class="blog-content" id="blog-post-1">
